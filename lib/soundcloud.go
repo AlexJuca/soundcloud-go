@@ -43,6 +43,11 @@ func (s SoundCloud) Playlists(playlistsId string) {
 }
 
 
+// Return a soundcloud user
+func (s SoundCloud) Users(userId string) {
+    Get(s, "users", userId)
+}
+
 
 // Handle POST requests
 func Post() {
