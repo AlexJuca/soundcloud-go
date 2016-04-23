@@ -17,11 +17,11 @@ authorization and execution of HTTP Calls.
     # Get track title
     title, _ := song.GetString("title")
     # Get track desccription
-    desccription, _ := song.GetString("description")
+    description, _ := song.GetString("description")
     
     # Print track information
     fmt.Println("Title ->", title)
-    fmt.Println("Description ->", desccription)
+    fmt.Println("Description ->", description)
 ```
     
     
