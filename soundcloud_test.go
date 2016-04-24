@@ -1,12 +1,12 @@
 package soundclient
 
 import (
-        "testing" 
-        "os"
-        )
+	"os"
+	"testing"
+)
 
 // NOTE THAT tests will fail if you do not insert the proper CLIENT_ID when initialising the SoundCloud object
-// Add the clientId to your enviroment 
+// Add the clientId to your enviroment
 func makeObj() SoundCloud {
 	return SoundCloud{os.Getenv("SOUNDCLOUD_CLIENT_ID"), os.Getenv("SOUNDCLOUD_SECRET")}
 }
