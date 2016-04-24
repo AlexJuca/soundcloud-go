@@ -18,15 +18,15 @@ beginner mistakes, if you do find one please share some of your wisdom with me. 
     client := soundclient.SoundCloud{ ClientId: YOUR_CLIENT_ID,
                                       ClientSecret: YOUR_SECRET_KEY}
                                       
-    # Retrieve a track by id as json object
+    // Retrieve a track by id as json object
     song := client.Tracks("13158")
     
-    # Get track title
+    // Get track title
     title, _ := song.GetString("title")
     # Get track desccription
     description, _ := song.GetString("description")
     
-    # Print track information
+    // Print track information
     fmt.Println("Title ->", title)
     fmt.Println("Description ->", description)
 ```
