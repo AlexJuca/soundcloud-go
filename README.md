@@ -1,4 +1,5 @@
 # SoundCloud Go API Wrapper
+[![build](https://img.shields.io/travis/op/go-logging.svg?style=flat)](https://travis-ci.org/AlexJuca/soundcloud-go.svg?branch=master)
 
 ## Description
 This is the SoundCloud API Wrapper written in Go. It provides methods to handle
