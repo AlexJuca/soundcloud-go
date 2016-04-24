@@ -5,6 +5,9 @@ This is the SoundCloud API Wrapper written in Go. It provides methods to handle
 authorization and execution of HTTP Calls. I built this after my 5th day learning Go so there might be lots of silly 
 beginner mistakes, if you do find one please share some of your wisdom with me. :)
 
+## Features
+
+ Currently allows users to fetch soundcloud tracks, users, groups and playlists and their associated data as json
 
 # Examples
 
@@ -13,7 +16,8 @@ beginner mistakes, if you do find one please share some of your wisdom with me. 
     # Register a client with your YOUR_CLIENT_ID as ClientId
     client := soundclient.SoundCloud{ ClientId: YOUR_CLIENT_ID,
                                       ClientSecret: YOUR_SECRET_KEY}
-    # Get a track 
+                                      
+    # Retrieve a track by id as json object
     song := client.Tracks("13158")
     
     # Get track title
