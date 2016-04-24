@@ -5,8 +5,8 @@ import (
     "fmt")
 
 func main() {
-    client := soundclient.SoundCloud{ClientId: "042bd096125d480ea6d7f08cf4b092eb",
-                                     ClientSecret: "042bd096125d480ea6d7f08cf4b092eb"}
+    client := soundclient.SoundCloud{ClientId: "YOUR_CLIENT_ID",
+                                     ClientSecret: "YOUR_SECRET"}
                              
     // Retrieve a track by id as json object
     song := client.Tracks("13158")
