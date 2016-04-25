@@ -13,7 +13,7 @@ const apiBaseUrl string = "https://api.soundcloud.com"
 
 type SoundCloud struct {
 	ClientId     string
-	ClientSecret int
+	ClientSecret string
 }
 
 // Handle get requests to an endpoint
@@ -32,7 +32,6 @@ func Get(s SoundCloud, apiCall string, kargs string) *jason.Object {
 	}
 	defer resp.Body.Close()
 	return nil
-
 }
 
 // Return a soundcloud track
@@ -52,6 +51,11 @@ func (s SoundCloud) Users(userId string) *jason.Object {
 // Get Group members and contributed tracks
 func (s SoundCloud) Groups(groupId string) *jason.Object {
 	return Get(s, "groups", groupId)
+}
+
+// Get comments for a specific track
+func (s SoundCloud) Comments(commentId string) *jason.Object {
+	return Get(s, "comments", commentId)
 }
 
 // Handle POST requests
