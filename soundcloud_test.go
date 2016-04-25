@@ -8,7 +8,13 @@ import (
 // NOTE THAT tests will fail if you do not insert the proper CLIENT_ID when initialising the SoundCloud object
 // Add the clientId to your enviroment
 func makeObj() SoundCloud {
-	return SoundCloud{os.Getenv("SOUNDCLOUD_CLIENT_ID"), os.Getenv("SOUNDCLOUD_SECRET")}
+    sClientId := os.Getenv("SOUNDCLOUD_CLIENT_ID")
+    sSecret := os.Getenv("SOUNDCLOUD_SECRET")
+    if (sClientId != "" && sSecret != "") {
+        return SoundCloud{sClientId, sSecret}
+    }
+    return SoundCloud{sClientId, sSecret}
+	
 }
 
 func TestGet(t *testing.T) {
@@ -33,6 +39,16 @@ func TestGroup(t *testing.T) {
 	uri, _ := tGroup.GetString("uri")
 	if uri != "https://api.soundcloud.com/groups/3" {
 		t.Errorf("Unable to get correct uri for group")
+	}
+
+}
+
+func TestComments(t *testing.T) {
+	s := makeObj()
+	tComments := s.Comments("13158")
+	body, _ := tComments.GetString("body")
+	if body != "nice!" {
+		t.Errorf("Unable to get correct comment for track")
 	}
 
 }
