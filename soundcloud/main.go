@@ -14,14 +14,17 @@ func main() {
     // Get track title
     title, _ := song.GetString("title")
     // Get track desccription
-    description, _ := song.GetString("description")
-    
+    description, err := song.GetString("description")
+    if err == nil {
+        songOwner, _ := song.GetString("id")
+         fmt.Println("songOwner id ->", songOwner)
+    }
     // Print track information
     fmt.Println("Title ->", title)
     fmt.Println("Description ->", description)
     
     // Retrieve a User by id as Json object
-    user := client.Users("1")
+    user := client.Users("36991")
     
     // Get the users full name and country
     fname, _ := user.GetString("full_name")
@@ -29,6 +32,12 @@ func main() {
     
     // Print user information
     fmt.Println("Full Name ->", fname)
-    fmt.Println("COuntry ->", country)
+    fmt.Println("Country ->", country)
+    
+    // Retrieve a comment for a specific track
+    comment := client.Comments("13158")
+    commentBody, _ := comment.GetString("body")
+    
+    fmt.Println("Comment -> ", commentBody)
     
 }
