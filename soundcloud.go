@@ -13,7 +13,7 @@ const apiBaseUrl string = "https://api.soundcloud.com"
 
 type SoundCloud struct {
 	ClientId     string
-	ClientSecret string
+	ClientSecret int
 }
 
 // Handle get requests to an endpoint
