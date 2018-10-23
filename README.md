@@ -35,3 +35,5 @@ beginner mistakes, if you do find one please share some of your wisdom with me. 
 ## Developed by 
 * Alexandre A.Juca <alexandre.juca@bitfyr.com>
 
+## Donate with Kamba to keep this project active
+![Screenshot](/donation/donation-alex.png)
